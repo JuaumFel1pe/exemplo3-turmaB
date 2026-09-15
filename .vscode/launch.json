@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Exemplo2Application<exemplo2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.senac.tads.dsw.exemplo2.Exemplo2Application",
+            "projectName": "exemplo2",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Exemplo3Application<exemplo3>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.senac.tads.dsw.exemplo3.Exemplo3Application",
+            "projectName": "exemplo3",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
