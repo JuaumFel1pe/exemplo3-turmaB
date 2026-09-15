@@ -17,6 +17,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.senac.tads.dsw.exemplo3.model.Produto;
 import br.senac.tads.dsw.exemplo3.repository.ProdutoRepository;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/produtos")
@@ -30,7 +31,7 @@ public class ProdutoController {
 
     //Recebendo um nome e um preço
     @PostMapping
-    public ResponseEntity<Produto> criarProduto(@RequestBody Produto produto){
+    public ResponseEntity<Produto> criarProduto(@RequestBody @Valid Produto produto){//O @Valid serve para ele usar as validações que foram colocadas nos atributos na model
         
         //Usa o repository, pega 
         Produto produtoSalvo = repository.save(produto);
@@ -72,7 +73,7 @@ public class ProdutoController {
     }
 
     @PutMapping("/{id}")//Recebe o id porque vai atualizar um produto em especifico
-    public ResponseEntity<Produto> atualizarProduto(@PathVariable Long id, @RequestBody Produto produtoAtualizado){
+    public ResponseEntity<Produto> atualizarProduto(@PathVariable Long id, @RequestBody @Valid Produto produtoAtualizado){
         //Optional porque o produto pode não existir
         Optional<Produto> produtoBuscado = repository.findById(id);
 
